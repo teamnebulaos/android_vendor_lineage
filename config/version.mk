@@ -1,5 +1,5 @@
-PRODUCT_VERSION_MAJOR = 21
-PRODUCT_VERSION_MINOR = 0
+PRODUCT_VERSION_MAJOR = 0
+PRODUCT_VERSION_MINOR = 1d
 
 ifeq ($(LINEAGE_VERSION_APPEND_TIME_OF_DAY),true)
     LINEAGE_BUILD_DATE := $(shell date -u +%Y%m%d_%H%M%S)
@@ -12,7 +12,7 @@ endif
 ifndef LINEAGE_BUILDTYPE
     ifdef RELEASE_TYPE
         # Starting with "LINEAGE_" is optional
-        RELEASE_TYPE := $(shell echo $(RELEASE_TYPE) | sed -e 's|^LINEAGE_||g')
+        RELEASE_TYPE := $(shell echo $(RELEASE_TYPE) | sed -e 's|^nebulaos_||g')
         LINEAGE_BUILDTYPE := $(RELEASE_TYPE)
     endif
 endif
